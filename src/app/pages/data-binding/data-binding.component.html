@@ -1,0 +1,19 @@
+<h1 [class.text-red]="textRed">O nome é: {{text}}</h1>
+<h1>O nome é: {{retornaNome()}}</h1>
+
+<!-- nao é o ideal -->
+<img src="{{imgUrl}}" alt="">
+
+<!-- melhor -->
+<img [src]="imgUrl" alt="">
+
+<button (click)="clicou()" [style.backgroundColor]="bgColor">Clique aqui</button>
+
+<button [attr.aria-label]="buttonText">{{buttonText}}</button>
+
+<input type="text" class="form-control" [(ngModel)]="textInput">
+<p class="text-default">{{textInput}}</p>
+
+<app-button [btnText]="'Enviar'" [btnType]="'btn-danger'"></app-button>
+<app-button [btnText]="'Salvar'" [btnType]="'btn-success'"></app-button>
+<app-button [btnText]="'Teste'" [btnType]="'btn-primary'" (clickChildren)="clicouNoFilho($event)"></app-button>

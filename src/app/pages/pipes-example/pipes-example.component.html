@@ -1,0 +1,48 @@
+<div class="form-group">
+  <label for="number">Number:</label>
+  <input type="text" [(ngModel)]="number" class="form-control" id="number">
+</div>
+
+<div>
+  <p>Sem formatação</p>
+  <p>Number: {{number | number}}</p>
+  <p>Com formatação</p>
+  <p>Number: {{number | number:'2.0-1'}}</p>
+  <p>Resultado em moeda</p>
+  <p>Number: {{number | currency:'BRL'}}</p>
+  <p>Text: {{text | uppercase}}</p>
+  <p>Text: {{text | titlecase}}</p>
+
+  <p>Data de hoje</p>
+  <p>Sem formatação: {{date}}</p>
+  <p>Com formatação: {{date | date}}</p>
+  <p>Com formatação: {{date | date: 'dd/MM/yyyy'}}</p>
+  <p>Com formatação: {{date | date: 'longDate'}}</p>
+  <p>Com formatação: {{date | date: 'dd/MM/yyyy, h:mm a'}}</p>
+  <p>Com formatação: {{date | date: 'medium'}}</p>
+  <p>Com formatação: {{date | date: 'full' | uppercase}}</p>
+
+  <p>{{pessoa}}</p>
+  <p>{{pessoa | json}}</p>
+
+  <p>SLICE: {{pessoa.nome}}</p>
+  <p>{{pessoa.nome | slice: 0:3}}</p>
+  <p>{{pessoa.nome | slice: 3}}</p>
+</div>
+
+<div class="container">
+  <div class="col">
+    <div class="row-6">
+      <div class="form-group">
+        <label for="text">Print pipe test:</label>
+        <input type="text" name="text" id="text" #nome>
+        <button class="btn btn-primary" (click)="add(nome.value)">Add</button>
+      </div>
+    </div>
+    <div class="row-6">
+      <h3>Lista formatada</h3>
+      <p>Tamando da lista {{nomes.length}}</p>
+      <p>{{nomes | printList}}</p>
+    </div>
+  </div>
+</div>
